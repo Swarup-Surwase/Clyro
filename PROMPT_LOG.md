@@ -111,3 +111,23 @@
   - Validated all three SVG documents for well-formed XML, verified `git status` excludes `node_modules/`, `dist/`, `test-results/`, and incremental build caches, committed on `main`, and pushed to `origin/main`.
 - **Remaining Issues:**
   - None.
+
+
+---
+
+## Entry 005 — Fix Vercel 404 Deployment Configuration (`vercel.json`)
+
+- **Date and Time:** `2026-11-27 12:38–12:41 IST (+05:30)`
+- **Actual Prompt:**
+  > "this is the issue after uploading to vercel" (screenshot showing `clyro-vert.vercel.app` returning `404: NOT_FOUND`).
+- **Task Objective:**
+  1. Diagnose root cause via live HTTP headers: `/favicon.svg` returned `200 OK` (`787` bytes) while `/` and `/index.html` returned `404 NOT_FOUND`, indicating Vercel was serving `public/` directly instead of building with Vite and serving `dist/`.
+  2. Add explicit `"framework": "vite"`, `"buildCommand": "npm run build"`, `"outputDirectory": "dist"`, and asset-preserving SPA rewrite `"/((?!assets/|favicon\\.svg).*)" -> "/index.html"` in `vercel.json`.
+  3. Push fix to `origin/main` and verify live deployment response.
+- **Files Changed:**
+  - `vercel.json`
+  - `PROMPT_LOG.md`
+- **Verification Commands & Actual Results:**
+  - Verified `curl -sI` diagnosis prior to edit, verified local `npm run build` cleanly outputs `dist/index.html`, committed and pushed to `origin/main`.
+- **Remaining Issues:**
+  - If Vercel Project Settings manually override Output Directory to `public` or Framework Preset to `Other`, clear the dashboard override so `vercel.json` (`dist`) takes effect.
