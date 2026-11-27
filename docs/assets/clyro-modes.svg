@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 205" width="1200" height="205" fill="none">
+  <defs>
+    <style>
+      .sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .scan { animation: scanY 4s ease-in-out infinite; }
+      @keyframes scanY {
+        0%, 100% { transform: translateY(0px); opacity: 0.2; }
+        50% { transform: translateY(108px); opacity: 0.85; }
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="205" rx="12" fill="#050505" />
+  <rect x="0.75" y="0.75" width="1198.5" height="203.5" rx="11.25" stroke="#1B1D1F" stroke-width="1.5" />
+
+  <!-- Column 1: Raw Input -->
+  <g transform="translate(20, 18)">
+    <rect width="275" height="169" rx="9" fill="#0C0D0E" stroke="#26282A" />
+    <circle cx="18" cy="22" r="3.5" fill="#E87D85" />
+    <text x="29" y="26" class="mono" font-size="11" font-weight="600" fill="#F5F5F5">ORIGINAL (SYNTHETIC)</text>
+    <line x1="0" y1="40" x2="275" y2="40" stroke="#1B1D1F" />
+    <rect class="scan" x="8" y="46" width="259" height="2" fill="#E87D85" fill-opacity="0.35" />
+    <text x="16" y="68" class="mono" font-size="12" fill="#89C4D7">ravi@example.com</text>
+    <text x="16" y="96" class="mono" font-size="12" fill="#A8E6CF">+91 98765 43210</text>
+    <text x="16" y="124" class="mono" font-size="12" fill="#D49A79">4111 1111 1111 1111</text>
+    <text x="16" y="152" class="mono" font-size="12" fill="#E6BA70">4111111111111112 (Bad Luhn)</text>
+  </g>
+
+  <!-- Column 2: Full Mask -->
+  <g transform="translate(315, 18)">
+    <rect width="275" height="169" rx="9" fill="#0C0D0E" stroke="#26282A" />
+    <circle cx="18" cy="22" r="3.5" fill="#F5F5F5" />
+    <text x="29" y="26" class="mono" font-size="11" font-weight="600" fill="#F5F5F5">FULL MASK (DEFAULT)</text>
+    <line x1="0" y1="40" x2="275" y2="40" stroke="#1B1D1F" />
+    <text x="16" y="68" class="mono" font-size="12" fill="#A8E6CF">[REDACTED]</text>
+    <text x="16" y="96" class="mono" font-size="12" fill="#A8E6CF">[REDACTED]</text>
+    <text x="16" y="124" class="mono" font-size="12" fill="#A8E6CF">[REDACTED]</text>
+    <text x="16" y="152" class="mono" font-size="11.5" fill="#737373">Flagged for review (not card)</text>
+  </g>
+
+  <!-- Column 3: Partial Mask -->
+  <g transform="translate(610, 18)">
+    <rect width="275" height="169" rx="9" fill="#0C0D0E" stroke="#26282A" />
+    <circle cx="18" cy="22" r="3.5" fill="#E6BA70" />
+    <text x="29" y="26" class="mono" font-size="11" font-weight="600" fill="#F5F5F5">PARTIAL MASK</text>
+    <line x1="0" y1="40" x2="275" y2="40" stroke="#1B1D1F" />
+    <text x="16" y="68" class="mono" font-size="12" fill="#E6BA70">r***@***</text>
+    <text x="16" y="96" class="mono" font-size="12" fill="#E6BA70">XXXXXX3210</text>
+    <text x="16" y="124" class="mono" font-size="12" fill="#E6BA70">XXXX-XXXX-XXXX-1111</text>
+    <text x="16" y="152" class="mono" font-size="11.5" fill="#737373">Retains last-4 context only</text>
+  </g>
+
+  <!-- Column 4: Pseudonymization -->
+  <g transform="translate(905, 18)">
+    <rect width="275" height="169" rx="9" fill="#111315" stroke="#A8E6CF" stroke-opacity="0.55" />
+    <circle cx="18" cy="22" r="3.5" fill="#6DD6A4" />
+    <text x="29" y="26" class="mono" font-size="11" font-weight="600" fill="#A8E6CF">PSEUDONYMIZATION</text>
+    <line x1="0" y1="40" x2="275" y2="40" stroke="#1B1D1F" />
+    <text x="16" y="68" class="mono" font-size="12" fill="#A8E6CF">EMAIL_001</text>
+    <text x="16" y="96" class="mono" font-size="12" fill="#A8E6CF">PHONE_001</text>
+    <text x="16" y="124" class="mono" font-size="12" fill="#A8E6CF">CARD_001</text>
+    <text x="16" y="152" class="mono" font-size="11.5" fill="#6DD6A4">NGO_A7F2_PHONE_001 (Scoped)</text>
+  </g>
+</svg>

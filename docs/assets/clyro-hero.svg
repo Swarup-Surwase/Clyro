@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#050505" />
+      <stop offset="50%" stop-color="#090A0B" />
+      <stop offset="100%" stop-color="#050505" />
+    </linearGradient>
+    <linearGradient id="mintBeam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#A8E6CF" stop-opacity="0" />
+      <stop offset="50%" stop-color="#A8E6CF" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#A8E6CF" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="louverSilver" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5F5F5" stop-opacity="0" />
+      <stop offset="50%" stop-color="#F5F5F5" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#F5F5F5" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="louverMint" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A8E6CF" stop-opacity="0" />
+      <stop offset="50%" stop-color="#A8E6CF" stop-opacity="0.34" />
+      <stop offset="100%" stop-color="#A8E6CF" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="48%">
+      <stop offset="0%" stop-color="#A8E6CF" stop-opacity="0.14" />
+      <stop offset="60%" stop-color="#050505" stop-opacity="0" />
+    </radialGradient>
+    <style>
+      .louver-a { animation: pulseA 3.6s ease-in-out infinite; }
+      .louver-b { animation: pulseB 3.6s ease-in-out infinite 0.55s; }
+      .louver-c { animation: pulseA 3.6s ease-in-out infinite 1.1s; }
+      .louver-d { animation: pulseB 3.6s ease-in-out infinite 1.65s; }
+      .stream-in { stroke-dasharray: 6 10; animation: flowIn 2.8s linear infinite; }
+      .stream-out { stroke-dasharray: 8 8; animation: flowOut 2.4s linear infinite; }
+      .title-sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      @keyframes pulseA {
+        0%, 100% { opacity: 0.14; }
+        50% { opacity: 0.78; }
+      }
+      @keyframes pulseB {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 0.92; }
+      }
+      @keyframes flowIn {
+        from { stroke-dashoffset: 64; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes flowOut {
+        from { stroke-dashoffset: 48; }
+        to { stroke-dashoffset: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- Base frame -->
+  <rect width="1200" height="340" rx="14" fill="url(#bgGrad)" />
+  <rect x="0.75" y="0.75" width="1198.5" height="338.5" rx="13.25" stroke="#26282A" stroke-width="1.5" />
+
+  <!-- Subtle architectural grid -->
+  <g stroke="#FFFFFF" stroke-opacity="0.035" stroke-width="1">
+    <line x1="150" y1="0" x2="150" y2="340" />
+    <line x1="300" y1="0" x2="300" y2="340" />
+    <line x1="450" y1="0" x2="450" y2="340" />
+    <line x1="600" y1="0" x2="600" y2="340" />
+    <line x1="750" y1="0" x2="750" y2="340" />
+    <line x1="900" y1="0" x2="900" y2="340" />
+    <line x1="1050" y1="0" x2="1050" y2="340" />
+    <line x1="0" y1="85" x2="1200" y2="85" />
+    <line x1="0" y1="170" x2="1200" y2="170" />
+    <line x1="0" y1="255" x2="1200" y2="255" />
+  </g>
+
+  <rect width="1200" height="340" rx="14" fill="url(#centerGlow)" />
+
+  <!-- Top and bottom hairline shimmers matching shader intro -->
+  <rect x="60" y="14" width="1080" height="1.5" fill="url(#mintBeam)" />
+  <rect x="60" y="324.5" width="1080" height="1.5" fill="url(#mintBeam)" />
+
+  <!-- Left fluted-glass louvers -->
+  <g>
+    <rect class="louver-d" x="28" y="24" width="14" height="292" fill="url(#louverSilver)" />
+    <rect class="louver-c" x="48" y="24" width="14" height="292" fill="url(#louverMint)" />
+    <rect class="louver-b" x="68" y="24" width="14" height="292" fill="url(#louverSilver)" />
+    <rect class="louver-a" x="88" y="24" width="14" height="292" fill="url(#louverMint)" />
+    <rect class="louver-b" x="108" y="24" width="14" height="292" fill="url(#louverSilver)" />
+    <rect class="louver-c" x="128" y="24" width="14" height="292" fill="url(#louverMint)" />
+    <rect class="louver-d" x="148" y="24" width="14" height="292" fill="url(#louverSilver)" />
+    <rect class="louver-a" x="168" y="24" width="14" height="292" fill="url(#louverMint)" opacity="0.5" />
+  </g>
+
+  <!-- Right fluted-glass louvers -->
+  <g>
+    <rect class="louver-a" x="1018" y="24" width="14" height="292" fill="url(#louverMint)" opacity="0.5" />
+    <rect class="louver-d" x="1038" y="24" width="14" height="292" fill="url(#louverSilver)" />
+    <rect class="louver-c" x="1058" y="24" width="14" height="292" fill="url(#louverMint)" />
+    <rect class="louver-b" x="1078" y="24" width="14" height="292" fill="url(#louverSilver)" />
+    <rect class="louver-a" x="1098" y="24" width="14" height="292" fill="url(#louverMint)" />
+    <rect class="louver-b" x="1118" y="24" width="14" height="292" fill="url(#louverSilver)" />
+    <rect class="louver-c" x="1138" y="24" width="14" height="292" fill="url(#louverMint)" />
+    <rect class="louver-d" x="1158" y="24" width="14" height="292" fill="url(#louverSilver)" />
+  </g>
+
+  <!-- Converging raw paths -> Privacy Gate -> Protected Mint paths -->
+  <g fill="none" stroke-width="1.5">
+    <path class="stream-in" d="M 185 110 C 265 110, 315 150, 385 170" stroke="#E87D85" stroke-opacity="0.55" />
+    <path class="stream-in" d="M 185 170 L 385 170" stroke="#A3A3A3" stroke-opacity="0.5" />
+    <path class="stream-in" d="M 185 230 C 265 230, 315 190, 385 170" stroke="#E6BA70" stroke-opacity="0.55" />
+
+    <path class="stream-out" d="M 815 170 C 885 155, 935 120, 1015 120" stroke="#A8E6CF" stroke-opacity="0.7" />
+    <path class="stream-out" d="M 815 170 L 1015 170" stroke="#6DD6A4" stroke-opacity="0.85" />
+    <path class="stream-out" d="M 815 170 C 885 185, 935 220, 1015 220" stroke="#A8E6CF" stroke-opacity="0.7" />
+  </g>
+
+  <!-- Moving particles across streams -->
+  <circle r="3" fill="#E87D85">
+    <animateMotion dur="2.6s" repeatCount="indefinite" path="M 185 110 C 265 110, 315 150, 385 170" />
+  </circle>
+  <circle r="3" fill="#E6BA70">
+    <animateMotion dur="2.9s" repeatCount="indefinite" path="M 185 230 C 265 230, 315 190, 385 170" />
+  </circle>
+  <circle r="3.2" fill="#A8E6CF">
+    <animateMotion dur="2.2s" repeatCount="indefinite" path="M 815 170 L 1015 170" />
+  </circle>
+  <circle r="2.8" fill="#6DD6A4">
+    <animateMotion dur="2.5s" repeatCount="indefinite" path="M 815 170 C 885 155, 935 120, 1015 120" />
+  </circle>
+
+  <!-- Center Privacy Corridor Card -->
+  <rect x="385" y="64" width="430" height="212" rx="14" fill="#0C0D0E" fill-opacity="0.92" stroke="#26282A" stroke-width="1.2" />
+
+  <!-- Clyro SVG Brand Mark centered -->
+  <g transform="translate(514, 96)">
+    <rect x="0.75" y="0.75" width="34.5" height="34.5" rx="8" fill="#050505" stroke="#26282A" stroke-width="1.2" />
+    <path d="M23.5 11.2C21.65 9.55 19.3 8.6 16.7 8.6C11.2 8.6 6.8 12.8 6.8 18C6.8 23.2 11.2 27.4 16.7 27.4C19.3 27.4 21.65 26.45 23.5 24.8" stroke="#F5F5F5" stroke-width="2.3" stroke-linecap="round" />
+    <path d="M13.6 14.2L18 18L13.6 21.8" stroke="#737373" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M19.2 18H29.2" stroke="#A8E6CF" stroke-width="2.1" stroke-linecap="round" />
+    <circle cx="29.2" cy="18" r="1.8" fill="#A8E6CF" />
+    <text x="48" y="25" class="title-sans" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#F5F5F5">Clyro</text>
+  </g>
+
+  <text x="600" y="168" text-anchor="middle" class="title-sans" font-size="20" font-weight="600" letter-spacing="-0.4" fill="#F5F5F5">
+    Protect identities. <tspan fill="#A8E6CF">Preserve humanity.</tspan>
+  </text>
+
+  <text x="600" y="198" text-anchor="middle" class="title-sans" font-size="13.5" fill="#A3A3A3">
+    Save Lives. Share Help. Protect Identities.
+  </text>
+
+  <!-- Bottom status chip -->
+  <rect x="427" y="224" width="346" height="28" rx="14" fill="#111315" stroke="#26282A" />
+  <circle cx="445" cy="238" r="3.5" fill="#6DD6A4">
+    <animate attributeName="opacity" values="1;0.35;1" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <text x="608" y="242" text-anchor="middle" class="mono" font-size="11" fill="#A8E6CF">
+    100% BROWSER-ONLY • ZERO RECORD UPLOADS
+  </text>
+</svg>

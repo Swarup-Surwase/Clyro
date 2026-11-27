@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build & TypeScript incremental artifacts
+dist/
+*.tsbuildinfo
+
+# Testing outputs
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+coverage/
+
+# Environment & OS files
+.env
+.env.*
+.DS_Store
+*.log
